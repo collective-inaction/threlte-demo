@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { T, useFrame } from '@threlte/core';
-	import { interactivity } from '@threlte/extras';
+	import { interactivity, OrbitControls } from '@threlte/extras';
 	import {
 		rotation,
 		scale,
@@ -26,7 +26,12 @@
 	on:create={({ ref }) => {
 		ref.lookAt(0, 0, 0);
 	}}
-/>
+>
+	<OrbitControls enableDamping 
+    maxAzimuthAngle={45}
+    minAzimuthAngle={-45}
+	/>
+</T.PerspectiveCamera>
 
 <T.DirectionalLight position={[0, 10, 10]} castShadow />
 
